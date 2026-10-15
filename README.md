@@ -61,9 +61,6 @@ I now write down the operations and their worst and average cases before I commi
 
 The three structures in Project One shared one course record, one loader, and one menu. Only insert, search, and the sorted print changed. That split made the comparison readable, and it made Project Two easier to build because the menu and the file format did not have to be reinvented. The C++ program keeps the same split: a `Course` struct, a `CourseTree` class, `loadCourses`, `printCourseList`, and the menu in `main`. `printCourseList` does not sort on its own. It walks the tree in order, so a later change to how a node is stored does not need a new sorting routine as long as the tree stays ordered by course number. The checks that make the program safer to change are in the same places: reload clears the old tree, a duplicate course number keeps the newer record, and a missing prerequisite wipes the load instead of advising from half a file. Comments record why the tree is balanced and why copying the tree is disabled, so the next change does not have to reverse-engineer those decisions.
 
-## AI use
-
-I used Grok 4.7, a large language model from xAI, inside Cursor on October 15, 2026. I used it to place my existing Project One analysis and Project Two source code into this repository and to draft the reflection above from those files. The analysis and the program are my course work. I reviewed this reflection against that work before submitting.
 
 xAI. (2026). *Grok 4.7* [Large language model]. https://x.ai/
 
