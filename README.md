@@ -61,7 +61,4 @@ I now write down the operations and their worst and average cases before I commi
 
 The three structures in Project One shared one course record, one loader, and one menu. Only insert, search, and the sorted print changed. That split made the comparison readable, and it made Project Two easier to build because the menu and the file format did not have to be reinvented. The C++ program keeps the same split: a `Course` struct, a `CourseTree` class, `loadCourses`, `printCourseList`, and the menu in `main`. `printCourseList` does not sort on its own. It walks the tree in order, so a later change to how a node is stored does not need a new sorting routine as long as the tree stays ordered by course number. The checks that make the program safer to change are in the same places: reload clears the old tree, a duplicate course number keeps the newer record, and a missing prerequisite wipes the load instead of advising from half a file. Comments record why the tree is balanced and why copying the tree is disabled, so the next change does not have to reverse-engineer those decisions.
 
-
-xAI. (2026). *Grok 4.7* [Large language model]. https://x.ai/
-
 Shapiro Library guidance used for this acknowledgment: [How do I cite AI (like ChatGPT) in APA Style?](https://libanswers.snhu.edu/faq/386764)
